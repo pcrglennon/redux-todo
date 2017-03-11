@@ -1,10 +1,16 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-class App extends React.Component {
-  render () {
-    return <p>Hello React!</p>;
-  }
-}
+import todoApp from './reducers/todos';
+import App from './components/App.jsx';
 
-render(<App/>, document.getElementById('app'));
+const store = createStore(todoApp);
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);
