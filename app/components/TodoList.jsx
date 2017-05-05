@@ -1,23 +1,20 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 import Todo from './Todo.jsx';
 
-const TodoList = ({ todos }) => (
-  <ul>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-      />
-    )}
-  </ul>
-);
-
-TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired
-};
+class TodoList extends React.Component {
+  render() {
+    return(
+      <ul>
+        {this.props.todos.map(todo =>
+          <Todo
+            key={todo.id}
+            {...todo}
+          />
+        )}
+      </ul>
+    );
+  }
+}
 
 export default TodoList;

@@ -1,13 +1,13 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
-const Todo = ({ text }) => (
-  <li>
-    {text}
-  </li>
-);
-
-Todo.propTypes = {
-  text: PropTypes.string.isRequired
-};
+class Todo extends React.Component {
+  render() {
+    return (
+      <li>
+        {this.props.description}
+      </li>
+    );
+  }
+}
 
 export default Todo;
