@@ -1,27 +1,27 @@
 import actionTypes from '../constants/actionTypes';
 
-// TODO: display an error message on TODOS_FETCH_ERROR?
+// TODO: display an error message on FETCH_TASKS_ERROR?
 const initialState = {
-  todosLoading: false
+  tasksLoading: false
 };
 
-const todosReducer = (state = initialState, action) => {
+const uiReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'TODOS_FETCH_BEGIN':
+    case 'FETCH_TASKS_BEGIN':
       return Object.assign({}, state, {
-        todosLoading: true
+        tasksLoading: true
       });
-    case 'TODOS_FETCH_ERROR':
+    case 'FETCH_TASKS_ERROR':
       return Object.assign({}, state, {
-        todosLoading: false
+        tasksLoading: false
       });
-    case 'TODOS_FETCH_SUCCESS':
+    case 'FETCH_TASKS_SUCCESS':
       return Object.assign({}, state, {
-        todosLoading: false
+        tasksLoading: false
       });
     default:
       return state;
   }
 };
 
-export default todosReducer;
+export default uiReducer;

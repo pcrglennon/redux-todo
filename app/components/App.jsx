@@ -1,12 +1,12 @@
 import React from 'react';
 
-import TodoListContainer from '../containers/TodoListContainer.jsx';
+import TaskListContainer from '../containers/TaskListContainer.jsx';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoListContainer />
+        <TaskListContainer />
       </div>
     );
   }
