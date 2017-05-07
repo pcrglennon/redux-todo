@@ -1,0 +1,7 @@
+const actionTypes = {
+  TODOS_FETCH_BEGIN: 'TODOS_FETCH_BEGIN',
+  TODOS_FETCH_ERROR: 'TODOS_FETCH_ERROR',
+  TODOS_FETCH_SUCCESS: 'TODOS_FETCH_SUCCESS'
+};
+
+export default actionTypes;

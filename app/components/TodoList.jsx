@@ -3,8 +3,14 @@ import React from 'react';
 import Todo from './Todo.jsx';
 
 class TodoList extends React.Component {
-  render() {
-    return(
+  renderTodosLoading() {
+    return (
+      <h2>Loading...</h2>
+    );
+  }
+
+  renderTodos() {
+    return (
       <ul>
         {this.props.todos.map(todo =>
           <Todo
@@ -14,6 +20,14 @@ class TodoList extends React.Component {
         )}
       </ul>
     );
+  }
+
+  render() {
+    if (this.props.todosLoading) {
+      return this.renderTodosLoading();
+    } else {
+      return this.renderTodos();
+    }
   }
 }
 

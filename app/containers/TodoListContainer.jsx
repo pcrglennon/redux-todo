@@ -4,7 +4,8 @@ import TodoList from '../components/TodoList.jsx';
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos
+    todos: state.todos,
+    todosLoading: state.ui.todosLoading
   };
 };
 

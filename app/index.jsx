@@ -4,12 +4,15 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
-import { initialize } from './actions/todos';
+import { fetchTodos } from './actions/todos';
 import todosReducer from './reducers/todos';
+import uiReducer from './reducers/ui';
+
 import App from './components/App.jsx';
 
 const rootReducer = combineReducers({
-  todos: todosReducer
+  todos: todosReducer,
+  ui: uiReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,7 +20,7 @@ const store = createStore(rootReducer, {}, composeEnhancers(
   applyMiddleware(thunk)
 ));
 
-store.dispatch(initialize());
+store.dispatch(fetchTodos());
 
 render(
   <Provider store={store}>
